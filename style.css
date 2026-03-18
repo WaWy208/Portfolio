@@ -712,18 +712,27 @@ h3 {
 
 .project-card {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   overflow: hidden;
   border-radius: 32px;
 }
 
 .project-card.featured {
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1fr;
 }
 
 .project-media {
-  min-height: 320px;
+  position: relative;
+  min-height: 340px;
   background: linear-gradient(135deg, rgba(124, 58, 237, 0.18), rgba(34, 211, 238, 0.08));
+}
+
+.project-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(8, 17, 31, 0.5) 100%);
+  pointer-events: none;
 }
 
 .project-media img {
@@ -733,7 +742,7 @@ h3 {
 }
 
 .project-content {
-  padding: 30px;
+  padding: 28px 30px 30px;
 }
 
 .project-tag-row {
@@ -761,6 +770,34 @@ h3 {
   display: grid;
   gap: 10px;
   margin-top: 18px;
+}
+
+.project-details {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.project-detail {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface-light);
+}
+
+.project-detail-label {
+  display: inline-flex;
+  margin-bottom: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+
+.project-detail p {
+  margin: 0;
+  color: var(--text-muted);
 }
 
 .project-points li {
