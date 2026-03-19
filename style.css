@@ -387,6 +387,62 @@ h3 {
   font-weight: 600;
 }
 
+.hero-usp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  margin-top: 26px;
+}
+
+.usp-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+    var(--surface);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.usp-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 15%, rgba(255, 255, 255, 0.12) 48%, transparent 82%);
+  transform: translateX(-140%);
+  transition: transform 0.8s ease;
+}
+
+.usp-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(236, 91, 42, 0.3);
+  box-shadow: 0 22px 60px rgba(236, 91, 42, 0.14);
+}
+
+.usp-card:hover::after {
+  transform: translateX(140%);
+}
+
+.usp-card strong {
+  position: relative;
+  z-index: 1;
+  color: var(--heading);
+  font-size: 1rem;
+}
+
+.usp-card span {
+  position: relative;
+  z-index: 1;
+  color: var(--text-muted);
+  font-size: 0.94rem;
+}
+
 .hero-actions {
   display: flex;
   gap: 14px;
@@ -507,6 +563,46 @@ h3 {
   z-index: -1;
 }
 
+.floating-proof {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  gap: 6px;
+  min-width: 210px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(9, 19, 31, 0.82);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: floatCard 5.2s ease-in-out infinite;
+}
+
+.proof-top {
+  top: -22px;
+  right: -16px;
+}
+
+.proof-bottom {
+  left: -12px;
+  bottom: 26px;
+  animation-delay: 0.7s;
+}
+
+.proof-label {
+  color: var(--secondary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.floating-proof strong {
+  color: var(--heading);
+  font-size: 0.98rem;
+}
+
 .profile-card {
   position: relative;
   padding: 24px;
@@ -569,6 +665,73 @@ h3 {
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--line);
+}
+
+.hero-dashboard {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 18px;
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+    rgba(7, 17, 27, 0.52);
+}
+
+.dashboard-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.dashboard-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.dashboard-metric {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dashboard-metric strong {
+  color: var(--heading);
+  font-size: 1.3rem;
+}
+
+.dashboard-metric span {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.dashboard-bars {
+  display: grid;
+  gap: 14px;
+}
+
+.dashboard-bar {
+  display: grid;
+  gap: 8px;
+}
+
+.dashboard-bar-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--heading);
+  font-size: 0.92rem;
+  font-weight: 600;
 }
 
 .panel-head {
@@ -848,6 +1011,34 @@ h3 {
   margin-top: 20px;
 }
 
+.project-specs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.project-spec {
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.project-spec strong {
+  color: var(--heading);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-spec span {
+  color: var(--text-muted);
+  font-size: 0.94rem;
+}
+
 .project-details {
   display: grid;
   gap: 12px;
@@ -919,6 +1110,10 @@ h3 {
   gap: 12px;
   flex-wrap: wrap;
   margin-top: 22px;
+}
+
+.project-links .btn-secondary {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
 }
 
 .project-placeholder {
@@ -1105,6 +1300,17 @@ textarea:focus {
   transform: translateY(0);
 }
 
+@keyframes floatCard {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 @media (max-width: 1080px) {
   .hero-layout,
   .skills-showcase,
@@ -1121,6 +1327,17 @@ textarea:focus {
 
   .hero-copy h1 {
     max-width: 13ch;
+  }
+
+  .hero-usp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-top,
+  .proof-bottom {
+    position: static;
+    min-width: 0;
+    animation: none;
   }
 }
 
@@ -1176,6 +1393,7 @@ textarea:focus {
   }
 
   .hero-proof-strip,
+  .hero-usp-grid,
   .project-meta,
   .project-stack,
   .contact-highlights {
@@ -1183,6 +1401,10 @@ textarea:focus {
   }
 
   .profile-card-top {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-metrics {
     grid-template-columns: 1fr;
   }
 
@@ -1222,6 +1444,10 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 
+  .project-specs {
+    grid-template-columns: 1fr;
+  }
+
   .hero-actions,
   .project-links {
     flex-direction: column;
@@ -1229,6 +1455,12 @@ textarea:focus {
 
   .btn {
     width: 100%;
+  }
+
+  .dashboard-head,
+  .dashboard-bar-top {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .metric-card,
