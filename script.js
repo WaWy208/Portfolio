@@ -9,8 +9,7 @@
   const yearSpan = document.getElementById("year");
   const contactForm = document.getElementById("contactForm");
   const formNote = document.getElementById("formNote");
-const revealElements = document.querySelectorAll(".reveal");
-  const stickyCta = document.querySelector(".sticky-cta");
+  const revealElements = document.querySelectorAll(".reveal");
   const orb1 = document.querySelector(".orb-1");
   const orb2 = document.querySelector(".orb-2");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
@@ -73,17 +72,13 @@ const revealElements = document.querySelectorAll(".reveal");
     });
   }
 
-const updateScrollState = () => {
+  const updateScrollState = () => {
     if (siteHeader) {
       siteHeader.classList.toggle("scrolled", window.scrollY > 12);
     }
 
     if (backToTopBtn) {
       backToTopBtn.classList.toggle("visible", window.scrollY > 500);
-    }
-
-    if (stickyCta) {
-      stickyCta.classList.toggle("visible", window.scrollY > 200);
     }
 
     updateOrbs();
@@ -130,19 +125,26 @@ const updateScrollState = () => {
       if (!submitButton) return;
 
       const originalText = submitButton.textContent;
+      const formData = new FormData(contactForm);
+      const name = String(formData.get("name") || "").trim();
+      const email = String(formData.get("email") || "").trim();
+      const message = String(formData.get("message") || "").trim();
+      const recipient = "0opsnaruto111@gmail.com";
+
+      const subject = encodeURIComponent(`Liên hệ portfolio từ ${name || "khách"} `);
+      const body = encodeURIComponent(
+        `Họ và tên: ${name}\nEmail: ${email}\n\nNội dung:\n${message}`
+      );
+
       submitButton.disabled = true;
-      submitButton.textContent = "Đang gửi...";
+      submitButton.textContent = "Đang mở email...";
+      formNote.textContent = "Ứng dụng email của bạn sẽ mở với nội dung đã điền sẵn.";
+
+      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
 
       setTimeout(() => {
-        submitButton.textContent = "Đã gửi";
-        formNote.textContent = "Cảm ơn bạn. Tôi đã ghi nhận lời nhắn của bạn (demo mode).";
-        contactForm.reset();
-
-        setTimeout(() => {
-          submitButton.disabled = false;
-          submitButton.textContent = originalText;
-          formNote.textContent = "";
-        }, 2200);
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
       }, 1200);
     });
   }
