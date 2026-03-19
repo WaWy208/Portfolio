@@ -495,6 +495,36 @@ h3 {
   justify-content: center;
 }
 
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  margin-top: 22px;
+}
+
+.trust-item {
+  display: grid;
+  gap: 6px;
+  padding: 16px 18px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.trust-item strong {
+  color: var(--heading);
+  font-size: 1rem;
+}
+
+.trust-item span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
 .pill {
   padding: 10px 14px;
   border-radius: 999px;
@@ -1197,6 +1227,27 @@ h3 {
   margin-top: 28px;
 }
 
+.contact-cta-box {
+  display: grid;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 18px 20px;
+  border-radius: 22px;
+  border: 1px solid rgba(236, 91, 42, 0.22);
+  background: linear-gradient(135deg, rgba(236, 91, 42, 0.12), rgba(22, 199, 183, 0.08));
+}
+
+.contact-cta-box strong {
+  color: var(--heading);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact-cta-box span {
+  color: var(--text-muted);
+}
+
 .contact-list a {
   width: fit-content;
   color: var(--heading);
@@ -1330,6 +1381,10 @@ textarea:focus {
   }
 
   .hero-usp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-strip {
     grid-template-columns: 1fr;
   }
 
