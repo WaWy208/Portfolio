@@ -112,7 +112,7 @@
 
       setTimeout(() => {
         submitButton.textContent = "Đã gửi";
-        formNote.textContent = "Cảm ơn bạn. Mình đã ghi nhận lời nhắn của bạn (demo mode).";
+        formNote.textContent = "Cảm ơn bạn. Tôi đã ghi nhận lời nhắn của bạn (demo mode).";
         contactForm.reset();
 
         setTimeout(() => {
