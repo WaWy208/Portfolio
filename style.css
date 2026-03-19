@@ -284,6 +284,94 @@ ul {
   background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.02), transparent);
 }
 
+.proof-band {
+  padding-top: 24px;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.proof-card {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+    var(--surface);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.proof-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(236, 91, 42, 0.34);
+  box-shadow: 0 26px 60px rgba(236, 91, 42, 0.14);
+}
+
+.proof-kicker {
+  color: var(--secondary);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.proof-card h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.proof-card p {
+  color: var(--text-muted);
+}
+
+.proof-card-cta {
+  background:
+    linear-gradient(145deg, rgba(236, 91, 42, 0.16), rgba(22, 199, 183, 0.08)),
+    var(--surface);
+}
+
+.proof-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    var(--surface);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(236, 91, 42, 0.34);
+  box-shadow: 0 26px 60px rgba(236, 91, 42, 0.14);
+}
+
+.service-card p {
+  color: var(--text-muted);
+}
+
 .hero {
   padding-top: 72px;
   min-height: 100vh;
@@ -1368,7 +1456,9 @@ textarea:focus {
   .contact-shell,
   .project-card,
   .project-card.featured,
-  .about-grid {
+  .about-grid,
+  .service-grid,
+  .proof-grid {
     grid-template-columns: 1fr;
   }
 
