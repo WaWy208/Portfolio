@@ -376,6 +376,15 @@ h3 {
   background-clip: text;
 }
 
+.hero-subtitle {
+  max-width: 55ch;
+  margin: 18px auto 22px;
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+}
+
 .hero-desc {
   max-width: 62ch;
   margin-top: 22px;
@@ -408,8 +417,8 @@ h3 {
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: var(--shadow), 0 0 24px rgba(124, 58, 237, 0.4);
 }
 
 .btn-primary {
@@ -639,9 +648,11 @@ h3 {
 .stack-card:hover,
 .timeline-card:hover,
 .contact-card:hover,
-.skill-panel:hover {
-  transform: translateY(-5px);
-  border-color: rgba(124, 58, 237, 0.35);
+.skill-panel:hover,
+.metric-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow: 0 32px 100px rgba(124, 58, 237, 0.3), 0 0 0 1px rgba(124, 58, 237, 0.2);
 }
 
 .card-index {
@@ -761,7 +772,7 @@ h3 {
   display: grid;
   grid-template-columns: 1fr;
   overflow: hidden;
-  border-radius: 32px;
+  border-radius: 36px;
 }
 
 .project-card.featured {
